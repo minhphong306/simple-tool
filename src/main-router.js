@@ -14,7 +14,7 @@ const router = new VueRouter({
             component: About
         },
         {
-                path: '/tools/api-gen',
+            path: '/tools/api-gen',
             component: ApiGenerator
         }
     ]

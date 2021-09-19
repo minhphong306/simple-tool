@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "serve": "cross-env VUE_APP_LOCAL_RUN=true NODE_OPTIONS=--max_old_space_size=4096 vue-cli-service serve --watch --port=8080 --host=0.0.0.0",
+    "dev": "VUE_APP_LOCAL_RUN=true vue-cli-service serve --watch --port=8080 --host=0.0.0.0",
+    "build": "NODE_OPTIONS=--max_old_space_size=4096 vue-cli-service build"
   },
   "dependencies": {
     "bootstrap-vue": "^2.21.2",
@@ -23,7 +23,9 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-meta": "^2.4.0",
+    "vue-template-compiler": "^2.6.11",
+    "cross-env": "^5.2.0"
   },
   "eslintConfig": {
     "root": true,

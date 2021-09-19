@@ -4,7 +4,7 @@ import {BootstrapVue, BootstrapVueIcons} from 'bootstrap-vue'
 import store from './store'
 import * as VueTypedJs from 'vue-typed-js'
 import VueRouter from 'vue-router';
-import router from './router'
+import router from './main-router'
 
 
 

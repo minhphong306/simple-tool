@@ -1,49 +1,24 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import modules from './modules'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-    list: [
-      {
-        id: 1,
-        name: "phong" // "id=1&name=phong"
-      },
-      {
-        id: 2,
-        name: "vu"
-      }
-    ]
-  },
-  getters: {
-    getListString: (state) => {
-      const strList = []
-
-      for (let i =0;i < state.list.length; i++) {
-        const stateItem = state.list[i]
-
-        const item = `id=${stateItem.id}&name=${stateItem.name}`
-        // const item = `id=` + stateItem.id + '&name=' + stateItem.name
-        strList.push(item)
-      }
-
-      return strList
-      // [ "id=1&name=phong", "id=2&name=vu"]
-    }
-  },
-
-  mutations: {
-    add_item: (state, item) => {
-      state.list.push(item)
-    }
-  },
-
-  actions: {
-    addItem: ({commit}, item) => {
-      commit("add_item", item)
-    }
-  },
-  modules: {
-  }
+const store = new Vuex.Store({
+  modules,
+  // Enable strict mode in development to get a warning
+  // when mutating state outside of a mutation.
+  // https://vuex.vuejs.org/guide/strict.html
+  strict: process.env.NODE_ENV !== 'production',
 })
+
+// Automatically run the `init` action for every module,
+// if one exists.
+for (const moduleName of Object.keys(modules)) {
+  if (modules[moduleName].actions && modules[moduleName].actions.init) {
+    store.dispatch(`${moduleName}/init`)
+  }
+}
+
+export default store
+
