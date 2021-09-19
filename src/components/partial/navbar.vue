@@ -1,11 +1,11 @@
 <template>
-  <div class="mx-auto mt-250">
+  <div class="mx-auto mt-5">
     <div class="row">
-      <div class="header">
-        <vue-typed-js :strings="greetings" :loopCount="100">
-          <h1><span class="typing"></span></h1>
-        </vue-typed-js>
-      </div>
+      <vue-typed-js
+          :strings="greetings"
+          :loop="true">
+        <h1><span class="typing"></span></h1>
+      </vue-typed-js>
     </div>
     <div class="row">
       <blockquote>

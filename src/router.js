@@ -1,7 +1,7 @@
 import VueRouter from 'vue-router'
 import Home from './components/home'
 import About from './components/about'
-import ApiGenerator from './components/tools/api_generator'
+import ApiGenerator from './components/tools/api-gen/views/index'
 
 
 const router = new VueRouter({

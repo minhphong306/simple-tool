@@ -1,4 +1,4 @@
-# chamcong-app
+# My tool
 
 ## Project setup
 ```

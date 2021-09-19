@@ -42,12 +42,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.bg-sidebar {
-  background-color: #337ab7;
-}
-
-.sidebar-item {
-  cursor: pointer;
+<style>
+body {
+  background-color: #e9ebee;
 }
 </style>

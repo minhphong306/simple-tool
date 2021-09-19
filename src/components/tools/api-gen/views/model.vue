@@ -1,12 +1,10 @@
 <template>
-<div>
-  <p>API generator component</p>
-</div>
+<div>Model content</div>
 </template>
 
 <script>
 export default {
-  name: "api_generator"
+  name: "Model"
 }
 </script>
 
