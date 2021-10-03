@@ -1,9 +1,11 @@
 export const state = {
-  board: {},
-  models: {},
-  data: [],
-  current: {},
-  errMsg: '',
+  tableConfig: {
+    host: '127.0.0.1',
+    dbname: 'mydb',
+    user: '',
+    pwd: ''
+  },
+  modelConfig: {},
 }
 
 export { actions } from './actions'

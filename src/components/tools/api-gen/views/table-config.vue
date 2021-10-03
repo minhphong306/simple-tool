@@ -58,6 +58,8 @@
 </template>
 
 <script>
+// eslint-disable-next-line no-unused-vars
+import { mapActions, mapGetters, mapState } from 'vuex'
 export default {
   name: "TableConfig",
   data: () => {
@@ -67,6 +69,15 @@ export default {
       user: '',
       pwd: ''
     }
+  },
+  mounted() {
+
+  },
+  computed: {
+    ...mapState('boardUse', {
+      boardStructure: (state) => state.board,
+      modelData: (state) => state.data,
+    }),
   }
 }
 </script>
